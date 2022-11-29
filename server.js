@@ -38,9 +38,8 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.status(200);
 })
 
-app.get('*', (req, res) => {
-    res.send('404 NOT FOUND');
-    res.status(404);
-});
+app.use(function(req, res) {
+    res.send("404 NOT FOUND");
+})
 
 app.listen(port);
