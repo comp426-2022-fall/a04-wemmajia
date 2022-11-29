@@ -24,7 +24,8 @@ app.get('/app/roll/', (req, res) => {
 })
 
 app.get('/app/roll/:sides/', (req, res) => {
-    res.send(roll(parseInt(req.params.sides), 2, 1))
+    res.send(roll(parseInt(req.params.sides), 2, 1));
+    res.status(200);
 })
 
 app.get('/app/roll/:sides/:dice/', (req, res) => {
