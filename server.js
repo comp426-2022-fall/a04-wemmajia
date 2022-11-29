@@ -9,15 +9,18 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 
 app.get('/app/', (req, res) => {
-    res.send('200 OK')
+    res.send('200 OK');
+    res.status(200);
 })
 
 app.get('/app/roll/', (req, res) => {
-    res.send(roll(6, 2, 1))
+    res.send(roll(6, 2, 1));
+    res.status(200);
 })
 
 app.get('/app/roll/', (req, res) => {
-    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
+    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
+    res.status(200);
 })
 
 app.get('/app/roll/:sides/', (req, res) => {
@@ -31,3 +34,9 @@ app.get('/app/roll/:sides/:dice/', (req, res) => {
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)))
 })
+
+app.use((req, res) => {
+    res.send('404 NOT FOUND')
+})
+
+app.listen(port);
