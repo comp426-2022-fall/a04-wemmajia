@@ -19,7 +19,10 @@ app.get('/app/roll/', (req, res) => {
 })
 
 app.get('/app/roll/', (req, res) => {
-    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
+    let sides = parseInt(req.body.sides);
+    let dice = parseInt(req.body.dice);
+    let rolls = parseInt(req.body.rolls);
+    res.send(roll(sides, dice, rolls));
     res.status(200);
 })
 
