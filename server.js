@@ -19,10 +19,7 @@ app.get('/app/roll/', (req, res) => {
 })
 
 app.get('/app/roll/', (req, res) => {
-    let sides = parseInt(req.body.sides);
-    let dice = parseInt(req.body.dice);
-    let rolls = parseInt(req.body.rolls);
-    res.send(roll(sides, dice, rolls));
+    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
     res.status(200);
 })
 
@@ -41,9 +38,9 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.status(200);
 })
 
-app.use((req, res) => {
+app.get('*', (req, res) => {
     res.send('404 NOT FOUND');
     res.status(404);
-})
+});
 
 app.listen(port);
