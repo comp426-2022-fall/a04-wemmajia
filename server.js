@@ -32,6 +32,7 @@ app.get('/app/roll/:sides/', (req, res) => {
     res.status(200);
 })
 
+// default number of rolls with whatever number of sides and dice specified in the parameters
 app.get('/app/roll/:sides/:dice/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1));
     res.status(200);
