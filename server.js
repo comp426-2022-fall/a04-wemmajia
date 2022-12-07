@@ -14,6 +14,7 @@ app.get('/app/', (req, res) => {
     res.status(200);
 })
 
+// default roll of two six-sided dice one time
 app.get('/app/roll/', (req, res) => {
     res.send(roll(6, 2, 1));
     res.status(200);
