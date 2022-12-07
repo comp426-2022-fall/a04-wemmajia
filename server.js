@@ -8,7 +8,7 @@ const port = args.port || 5000;
 const app = express();
 app.use(express.urlencoded({extended: true}));
 
-// Check endpoint at /app/ that returns 200 OK
+// Check endpoint at /app/ that returns 200 OK.
 app.get('/app/', (req, res) => {
     res.send('200 OK');
     res.status(200);
