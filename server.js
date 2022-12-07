@@ -38,7 +38,7 @@ app.get('/app/roll/:sides/:dice/', (req, res) => {
     res.status(200);
 })
 
-// specified number of rolls with whatever number of sides and dice specified in the parameters
+// Specified number of rolls with whatever number of sides and dice specified in the parameters.
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)));
     res.status(200);
