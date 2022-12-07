@@ -44,6 +44,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.status(200);
 })
 
+// any endpoints that are not defined
 app.use((req, res) => {
 	res.send("404 NOT FOUND");
 	res.status(404);
